@@ -41,7 +41,7 @@ async def state1(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state=register.test2)
 async def state2(message: types.Message, state: FSMContext):
-    answer = message.answer_contact
+    answer = message.text
 
     await state.update_data(test2=answer)
     await message.answer('Введите Имя:')
